@@ -1,0 +1,150 @@
+import { StyleSheet } from 'react-native';
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#0A0B0E',
+    paddingHorizontal: 16,
+    paddingTop: 12,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  title: {
+    color: '#FFFFFF',
+    fontSize: 22,
+    fontWeight: '800',
+  },
+  subtitle: {
+    color: '#64748B',
+    fontSize: 12,
+    marginTop: 2,
+  },
+  addFabButton: {
+    backgroundColor: '#FACC15',
+    width: 42,
+    height: 42,
+    borderRadius: 21,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#14161F',
+    borderRadius: 16,
+    paddingHorizontal: 14,
+    height: 44,
+    borderWidth: 1,
+    borderColor: '#1E2230',
+    gap: 10,
+    marginBottom: 14,
+  },
+  searchInput: {
+    flex: 1,
+    color: '#FFFFFF',
+    fontSize: 13,
+  },
+  filterScroll: {
+    marginBottom: 16,
+    maxHeight: 36,
+  },
+  filterPill: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+    backgroundColor: '#14161F',
+    borderWidth: 1,
+    borderColor: '#1E2230',
+    marginRight: 8,
+  },
+  filterPillActive: {
+    backgroundColor: '#0284C7',
+    borderColor: '#38BDF8',
+  },
+  filterText: {
+    color: '#64748B',
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  filterTextActive: {
+    color: '#FFFFFF',
+  },
+  listContent: {
+    paddingBottom: 100,
+    gap: 12,
+  },
+  card: {
+    backgroundColor: '#14161F',
+    borderRadius: 20,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: '#1E2230',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  cardLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
+  },
+  avatar: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    backgroundColor: '#1E2230',
+    borderWidth: 1,
+    borderColor: '#0284C7',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  avatarText: {
+    color: '#38BDF8',
+    fontWeight: '700',
+    fontSize: 14,
+  },
+  studentName: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '700',
+  },
+  studentInfo: {
+    color: '#64748B',
+    fontSize: 11,
+    marginTop: 2,
+  },
+  cardRight: {
+    alignItems: 'flex-end',
+    gap: 6,
+  },
+  badgeSuccess: {
+    backgroundColor: 'rgba(52, 211, 153, 0.1)',
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: 8,
+  },
+  badgeSuccessText: {
+    color: '#34D399',
+    fontSize: 10,
+    fontWeight: '700',
+  },
+  badgeWarning: {
+    backgroundColor: 'rgba(250, 204, 21, 0.1)',
+    paddingHorizontal: 8,
+    paddingVertical: 3,
+    borderRadius: 8,
+  },
+  badgeWarningText: {
+    color: '#FACC15',
+    fontSize: 10,
+    fontWeight: '700',
+  },
+  presenceText: {
+    color: '#94A3B8',
+    fontSize: 11,
+  },
+});
