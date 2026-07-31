@@ -26,6 +26,7 @@ import { useHomeAnimations } from './useHomeAnimations';
 import { AlunosScreen } from './src/screens/Alunos/AlunosScreen';
 import { TurmasScreen } from './src/screens/Turmas/TurmasScreen';
 import { FinanceiroScreen } from './src/screens/Financeiro/FinanceiroScreen';
+import { AvisosScreen } from './src/screens/Avisos/AvisosScreen';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -108,7 +109,7 @@ export default function App() {
                 <Text style={styles.actionLabel}>Matricular</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.actionItem} activeOpacity={0.7}>
+              <TouchableOpacity style={styles.actionItem} activeOpacity={0.7} onPress={() => setActiveTab('avisos')}>
                 <View style={styles.actionCircle}>
                   <MessageSquare size={20} color="#E2E8F0" />
                 </View>
@@ -168,6 +169,7 @@ export default function App() {
       {activeTab === 'alunos' && <AlunosScreen />}
       {activeTab === 'turmas' && <TurmasScreen />}
       {activeTab === 'caixa' && <FinanceiroScreen />}
+      {activeTab === 'avisos' && <AvisosScreen />}
 
       {/* Menu Inferior Navegável */}
       <View style={styles.bottomNav}>
