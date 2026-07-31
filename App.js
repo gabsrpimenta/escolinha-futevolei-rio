@@ -24,6 +24,7 @@ import {
 import { styles } from './App.styles';
 import { useHomeAnimations } from './useHomeAnimations';
 import { AlunosScreen } from './src/screens/Alunos/AlunosScreen';
+import { TurmasScreen } from './src/screens/Turmas/TurmasScreen';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -42,7 +43,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#0A0B0E" />
       
-      {activeTab === 'home' ? (
+      {activeTab === 'home' && (
         <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
           {/* Header */}
           <Animated.View style={[styles.header, { opacity: fadeHeader }]}>
@@ -129,7 +130,7 @@ export default function App() {
                 <Flame size={18} color="#FACC15" />
                 <Text style={styles.cardTitle}>Aulas de Hoje na Praia</Text>
               </View>
-              <TouchableOpacity activeOpacity={0.6}>
+              <TouchableOpacity activeOpacity={0.6} onPress={() => setActiveTab('turmas')}>
                 <Text style={styles.cardLink}>Ver Grade</Text>
               </TouchableOpacity>
             </View>
@@ -161,11 +162,12 @@ export default function App() {
             </View>
           </Animated.View>
         </ScrollView>
-      ) : (
-        <AlunosScreen />
       )}
 
-      {/* Menu Inferior Navegável */}
+      {activeTab === 'alunos' && <AlunosScreen />}
+      {activeTab === 'turmas' && <TurmasScreen />}
+
+      {/* Menu Inferior */}
       <View style={styles.bottomNav}>
         <TouchableOpacity style={styles.navItem} activeOpacity={0.7} onPress={() => setActiveTab('home')}>
           <View style={activeTab === 'home' ? styles.navActiveBox : null}>
@@ -181,9 +183,11 @@ export default function App() {
           <Text style={activeTab === 'alunos' ? styles.navActiveText : styles.navText}>Alunos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItem} activeOpacity={0.7}>
-          <Calendar size={18} color="#64748B" />
-          <Text style={styles.navText}>Turmas</Text>
+        <TouchableOpacity style={styles.navItem} activeOpacity={0.7} onPress={() => setActiveTab('turmas')}>
+          <View style={activeTab === 'turmas' ? styles.navActiveBox : null}>
+            <Calendar size={18} color={activeTab === 'turmas' ? '#00D2FF' : '#64748B'} />
+          </View>
+          <Text style={activeTab === 'turmas' ? styles.navActiveText : styles.navText}>Turmas</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.navItem} activeOpacity={0.7}>
