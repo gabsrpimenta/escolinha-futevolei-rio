@@ -248,6 +248,8 @@ export const styles = StyleSheet.create({
     fontSize: 11,
     fontWeight: '600',
   },
+
+  // --- MENU INFERIOR AJUSTADO PARA 5 ABAS ---
   bottomNav: {
     position: 'absolute',
     bottom: 0,
@@ -263,13 +265,15 @@ export const styles = StyleSheet.create({
     paddingBottom: 6,
   },
   navItem: {
+    flex: 1,
     alignItems: 'center',
-    gap: 4,
+    justifyContent: 'center',
+    gap: 3,
   },
   navActiveBox: {
-    width: 32,
-    height: 24,
-    borderRadius: 10,
+    width: 28,
+    height: 22,
+    borderRadius: 8,
     backgroundColor: '#14161F',
     alignItems: 'center',
     justifyContent: 'center',
