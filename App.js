@@ -25,6 +25,7 @@ import { styles } from './App.styles';
 import { useHomeAnimations } from './useHomeAnimations';
 import { AlunosScreen } from './src/screens/Alunos/AlunosScreen';
 import { TurmasScreen } from './src/screens/Turmas/TurmasScreen';
+import { FinanceiroScreen } from './src/screens/Financeiro/FinanceiroScreen';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -114,7 +115,7 @@ export default function App() {
                 <Text style={styles.actionLabel}>Aviso Praia</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity style={styles.actionItem} activeOpacity={0.7}>
+              <TouchableOpacity style={styles.actionItem} activeOpacity={0.7} onPress={() => setActiveTab('caixa')}>
                 <View style={styles.actionCircle}>
                   <QrCode size={20} color="#E2E8F0" />
                 </View>
@@ -166,8 +167,9 @@ export default function App() {
 
       {activeTab === 'alunos' && <AlunosScreen />}
       {activeTab === 'turmas' && <TurmasScreen />}
+      {activeTab === 'caixa' && <FinanceiroScreen />}
 
-      {/* Menu Inferior */}
+      {/* Menu Inferior Navegável */}
       <View style={styles.bottomNav}>
         <TouchableOpacity style={styles.navItem} activeOpacity={0.7} onPress={() => setActiveTab('home')}>
           <View style={activeTab === 'home' ? styles.navActiveBox : null}>
@@ -190,9 +192,11 @@ export default function App() {
           <Text style={activeTab === 'turmas' ? styles.navActiveText : styles.navText}>Turmas</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.navItem} activeOpacity={0.7}>
-          <DollarSign size={18} color="#64748B" />
-          <Text style={styles.navText}>Caixa</Text>
+        <TouchableOpacity style={styles.navItem} activeOpacity={0.7} onPress={() => setActiveTab('caixa')}>
+          <View style={activeTab === 'caixa' ? styles.navActiveBox : null}>
+            <DollarSign size={18} color={activeTab === 'caixa' ? '#00D2FF' : '#64748B'} />
+          </View>
+          <Text style={activeTab === 'caixa' ? styles.navActiveText : styles.navText}>Caixa</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
